@@ -6,8 +6,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.xu.jetpacklearn.databinding.ActivityMainBinding;
 import com.xu.jetpacklearn.model.User;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // databinding
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        Log.d("a","ddfdf");
+        Log.d("a", "ddfdf");
 
         UserViewModel userViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(UserViewModel.class);
 
@@ -44,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
             public void onRefresh() {
                 userViewModel.refresh();
                 swipeRefresh.setRefreshing(false);
+            }
+        });
+
+        activityMainBinding.profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ApproveActivity.class));
             }
         });
 

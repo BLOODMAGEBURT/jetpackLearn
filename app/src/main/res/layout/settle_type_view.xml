@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.xu.jetpacklearn.utils.DataBindingUtils" />
+
+        <variable
+            name="model"
+            type="com.xu.jetpacklearn.views.settletypeview.SettleTypeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/menu_name"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="@{model.settleType}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/menu_result"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:gravity="center_vertical"
+            android:text="@{DataBindingUtils.convertDoubleToString(model.amount)}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/menu_to"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/menu_result"
+            android:gravity="center_vertical"
+            android:text="@{model.to}"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/menu_time"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text="@{model.remark}"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/view_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+</layout>

@@ -5,6 +5,7 @@ import com.github.simonpercic.oklog3.OkLogInterceptor;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -14,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitClient {
 
-    private static final String BASE_URL = "https://api.github.com/";
+    private static final String BASE_URL = "http://znk-dev.rotosix.cn/";
 
     private static RetrofitClient retrofitClient;
     private final Retrofit retrofit;
@@ -25,6 +26,7 @@ public class RetrofitClient {
                 .baseUrl(BASE_URL)
                 .client(getHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
 
     }
@@ -42,7 +44,7 @@ public class RetrofitClient {
 
         // create an instance of OkLogInterceptor using a builder()
         OkLogInterceptor okLogInterceptor = OkLogInterceptor.builder()
-                .setLogInterceptor(url -> true) //If you return true from this method, the string will not be logged.
+                .setLogInterceptor(url -> false) //If you return true from this method, the string will not be logged.
                 .build();
 
         OkHttpClient httpClient = new OkHttpClient.Builder()
@@ -56,5 +58,7 @@ public class RetrofitClient {
     public Api getApi() {
         return retrofit.create(Api.class);
     }
+
+
 
 }

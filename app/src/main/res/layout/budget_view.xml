@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.xu.jetpacklearn.utils.DataBindingUtils" />
+
+        <variable
+            name="model"
+            type="com.xu.jetpacklearn.views.budgetview.BudgetViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/budget_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="预算项目："
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/budget_item"
+            android:ellipsize="end"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/img_money"
+            android:layout_width="16dp"
+            android:layout_height="17dp"
+            android:layout_below="@id/item_name"
+            android:layout_marginTop="12dp"
+            android:src="@mipmap/excess" />
+
+        <TextView
+            android:id="@+id/item_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_name"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_money"
+            android:text="@{model.budgetName}" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/item_apply"
+                android:layout_width="16dp"
+                android:layout_height="17dp"
+                android:layout_below="@id/item_money"
+                android:layout_marginTop="12dp"
+                android:src="@mipmap/apply" />
+
+            <EditText
+                android:id="@+id/et_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/item_apply"
+                android:hint="请输入申请金额"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/see_tv_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@{DataBindingUtils.convertDoubleToString(model.applyAmount)}" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
