@@ -14,6 +14,7 @@ import com.xu.jetpacklearn.base.BaseResponse;
 import com.xu.jetpacklearn.base.BaseViewModel;
 import com.xu.jetpacklearn.databinding.ActivityApproveBinding;
 import com.xu.jetpacklearn.model.BasicInfo;
+import com.xu.jetpacklearn.model.BudgetBean;
 import com.xu.jetpacklearn.views.basicinfoview.BasicInfoViewModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -74,8 +75,23 @@ public class ApproveActivity extends AppCompatActivity {
                 });
 
         // 获取支出事项
-        RetrofitClient.getInstance().getApi().getExpense("1372072907257245697");
+        RetrofitClient.getInstance().getApi().getBudgets("1372072907257245697")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new BaseObserver<BaseResponse<List<BudgetBean>>>() {
+                    @Override
+                    public void onSuccess(BaseResponse<List<BudgetBean>> listBaseResponse) {
+                        List<BudgetBean> BudgetBeans = listBaseResponse.getResult();
 
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+
+                    }
+                });
 
 
     }

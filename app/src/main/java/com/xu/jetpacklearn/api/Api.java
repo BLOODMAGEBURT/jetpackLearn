@@ -2,6 +2,7 @@ package com.xu.jetpacklearn.api;
 
 import com.xu.jetpacklearn.base.BaseResponse;
 import com.xu.jetpacklearn.model.BasicInfo;
+import com.xu.jetpacklearn.model.BudgetBean;
 import com.xu.jetpacklearn.model.ExpenseBean;
 import com.xu.jetpacklearn.model.User;
 
@@ -32,6 +33,8 @@ public interface Api {
     @GET("bill/expensesExpendDetail/list")
     Observable<BaseResponse<List<ExpenseBean>>> getExpense(@Query("mainId") String mainId);
 
-    // bill/budgetTarget/list/v2
+    // 直接报销-获取支出和预算列表
+    @GET("bill/budgetTarget/list/v2")
+    Observable<BaseResponse<List<BudgetBean>>> getBudgets(@Query("mainId") String mainId);
 
 }
