@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.xu.jetpacklearn.base.BaseViewHolder;
 import com.xu.jetpacklearn.base.BaseViewModel;
+import com.xu.jetpacklearn.views.basicinfoview.BasicInfoView;
 import com.xu.jetpacklearn.views.basicinfoview.BasicInfoViewModel;
+import com.xu.jetpacklearn.views.budgetexpendview.BudgetExpendView;
+import com.xu.jetpacklearn.views.budgetexpendview.BudgetExpendViewModel;
 import com.xu.jetpacklearn.views.budgetview.BudgetViewModel;
 import com.xu.jetpacklearn.views.expendview.ExpendViewModel;
 import com.xu.jetpacklearn.views.picturetitleview.PictureTitleView;
@@ -35,6 +38,7 @@ public class NewsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final int EXPEND_TYPE = 4; // 支出事项
     private final int BUDGET_TYPE = 5; // 预算项目
     private final int SETTLE_TYPE = 6; // 结算方式
+    private final int BUDGET_EXPEND_TYPE = 7; // 支出预算合一
 
 
     public void setData(List<BaseViewModel> items) {
@@ -55,6 +59,17 @@ public class NewsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         if (viewType == PICTURE_TITLE_TYPE) {
             PictureTitleView pictureTitleView = new PictureTitleView(parent.getContext());
             return new BaseViewHolder(pictureTitleView);
+        }
+
+        if (viewType == BASIC_INFO_TYPE) {
+            BasicInfoView basicInfoView = new BasicInfoView(parent.getContext());
+            return new BaseViewHolder(basicInfoView);
+        }
+
+        // 支出预算合一
+        if (viewType == BUDGET_EXPEND_TYPE) {
+            BudgetExpendView budgetExpendView = new BudgetExpendView(parent.getContext());
+            return new BaseViewHolder(budgetExpendView);
         }
 
         return null;
@@ -80,6 +95,8 @@ public class NewsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
             return BUDGET_TYPE;
         } else if (baseViewModel instanceof SettleTypeViewModel) {
             return SETTLE_TYPE;
+        } else if (baseViewModel instanceof BudgetExpendViewModel) {
+            return BUDGET_EXPEND_TYPE;
         }
         return 0;
     }

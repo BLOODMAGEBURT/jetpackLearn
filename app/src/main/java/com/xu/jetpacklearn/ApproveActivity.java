@@ -3,6 +3,7 @@ package com.xu.jetpacklearn;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
@@ -13,9 +14,11 @@ import com.xu.jetpacklearn.base.BaseObserver;
 import com.xu.jetpacklearn.base.BaseResponse;
 import com.xu.jetpacklearn.base.BaseViewModel;
 import com.xu.jetpacklearn.databinding.ActivityApproveBinding;
+import com.xu.jetpacklearn.decoration.DividerDecoration;
 import com.xu.jetpacklearn.model.BasicInfo;
 import com.xu.jetpacklearn.model.BudgetBean;
 import com.xu.jetpacklearn.views.basicinfoview.BasicInfoViewModel;
+import com.xu.jetpacklearn.views.budgetexpendview.BudgetExpendViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -31,6 +34,7 @@ import retrofit2.Response;
 
 public class ApproveActivity extends AppCompatActivity {
     private List<BaseViewModel> models = new ArrayList<>();
+    private NewsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +43,10 @@ public class ApproveActivity extends AppCompatActivity {
 
         ActivityApproveBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_approve);
 
-        NewsAdapter newsAdapter = new NewsAdapter();
+        adapter = new NewsAdapter();
         binding.rvApprove.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        binding.rvApprove.setAdapter(newsAdapter);
+        binding.rvApprove.addItemDecoration(new DividerDecoration());
+        binding.rvApprove.setAdapter(adapter);
 
 
         netWork();
@@ -74,16 +79,25 @@ public class ApproveActivity extends AppCompatActivity {
                     }
                 });
 
-        // 获取支出事项
+        // 获取预算-支出事项
         RetrofitClient.getInstance().getApi().getBudgets("1372072907257245697")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new BaseObserver<BaseResponse<List<BudgetBean>>>() {
                     @Override
                     public void onSuccess(BaseResponse<List<BudgetBean>> listBaseResponse) {
-                        List<BudgetBean> BudgetBeans = listBaseResponse.getResult();
+                        List<BudgetBean> budgetBeans = listBaseResponse.getResult();
 
-
+                        for (BudgetBean budgetBean : budgetBeans) {
+                            BudgetExpendViewModel budgetExpendViewModel = new BudgetExpendViewModel();
+                            budgetExpendViewModel.expendName = budgetBean.getExpendItemName();
+                            budgetExpendViewModel.budgetName = budgetBean.getTargetName();
+                            budgetExpendViewModel.availableAmount = budgetBean.getAvailableAmount();
+                            budgetExpendViewModel.applyAmount = budgetBean.getApplyAmount();
+                            models.add(budgetExpendViewModel);
+                        }
+                        // 设置数据
+                        adapter.setData(models);
 
                     }
 
