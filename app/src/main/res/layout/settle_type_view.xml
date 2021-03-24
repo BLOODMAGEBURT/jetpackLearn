@@ -31,7 +31,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="60dp"
             android:gravity="center_vertical"
-            android:text="@{DataBindingUtils.convertDoubleToString(model.amount)}"
+            android:text="@{DataBindingUtils.formatMoney(model.amount)}"
             android:textSize="14sp" />
 
         <TextView

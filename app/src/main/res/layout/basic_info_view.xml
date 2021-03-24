@@ -198,7 +198,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="15dp"
-                    android:text="@{DataBindingUtils.convertDoubleToString(model.amount)}"
+                    android:text="@{DataBindingUtils.formatMoney(model.amount)}"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </RelativeLayout>
