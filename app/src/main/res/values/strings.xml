@@ -2,4 +2,6 @@
     <string name="app_name">JetpackLearn</string>
 
     <string name="location">location: %s</string>
+
+    <string name="node_name_status">%s:  %s</string>
 </resources>

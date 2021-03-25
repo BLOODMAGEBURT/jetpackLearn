@@ -15,4 +15,10 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
+    <com.xu.jetpacklearn.views.factor.FactorView
+        android:id="@+id/fv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
 </FrameLayout>

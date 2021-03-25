@@ -20,7 +20,7 @@ public class UserViewModel extends AndroidViewModel {
     private UserRepository userRepository;
     private LiveData<User> user;
 
-    private String userName = "MichaelYe";
+    private String userName = "BLOODMAGEBURT";
 
     public UserViewModel(@NonNull Application application) {
         super(application);

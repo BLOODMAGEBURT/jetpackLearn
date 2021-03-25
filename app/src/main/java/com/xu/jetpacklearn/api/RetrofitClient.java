@@ -71,7 +71,7 @@ public class RetrofitClient {
         @Override
         public Response intercept(Interceptor.Chain chain) throws IOException {
             Request request = chain.request().newBuilder()
-                    .addHeader("X-Access-Token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTcxMTc5MjMsInVzZXJuYW1lIjoi6K645YmR5rOiIn0.c1bn3U4t2jGKu9goIx77t0zS2mu5oMg4rkC879OgGM0")
+                    .addHeader("X-Access-Token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTcyNjMyNzIsInVzZXJuYW1lIjoi6K645YmR5rOiIn0.u5aAocZ5fqqZTCYKcBDWkLzLvfNYfH6TOnxfL2-NzvQ")
                     .build();
 
             return chain.proceed(request);
