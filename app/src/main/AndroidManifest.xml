@@ -20,7 +20,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ApproveActivity"/>
+        <activity
+            android:name=".PaymentApplyActivity"
+            android:label="@string/title_activity_payment_apply"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ApproveActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,20 +32,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <!-- 配置APP ID -->
+        <activity android:name=".MainActivity" /> <!-- 配置APP ID -->
         <meta-data
             android:name="BUGLY_APPID"
-            android:value="c38d7180fa" />
-        <!-- 配置APP版本号 -->
+            android:value="c38d7180fa" /> <!-- 配置APP版本号 -->
         <meta-data
             android:name="BUGLY_APP_VERSION"
-            android:value="1.0" />
-        <!-- 配置APP渠道号 -->
+            android:value="1.0" /> <!-- 配置APP渠道号 -->
         <meta-data
             android:name="BUGLY_APP_CHANNEL"
-            android:value="tx" />
-        <!-- 配置Bugly调试模式（true或者false） -->
+            android:value="tx" /> <!-- 配置Bugly调试模式（true或者false） -->
         <meta-data
             android:name="BUGLY_ENABLE_DEBUG"
             android:value="true" />
