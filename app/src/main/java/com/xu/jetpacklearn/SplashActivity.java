@@ -27,7 +27,8 @@ public class SplashActivity extends AppCompatActivity {
         togo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, PaymentApplyActivity.class));
             }
         });
 

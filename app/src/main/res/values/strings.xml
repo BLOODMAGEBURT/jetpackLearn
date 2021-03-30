@@ -4,4 +4,7 @@
     <string name="location">location: %s</string>
 
     <string name="node_name_status">%s:  %s</string>
+    <string name="title_activity_payment_apply">PaymentApplyActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
