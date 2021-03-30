@@ -74,7 +74,7 @@ public class FactorView extends LinearLayout {
 
             itemView.setData(new FactorItemViewModel(factorItemModel.isChecked, factorItemModel.factorText));
 
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.setMarginStart(Utils.dip2px(getContext(), 20));
 
             itemView.getDataBinding().ckFactorChoose.setOnClickListener(new OnClickListener() {
