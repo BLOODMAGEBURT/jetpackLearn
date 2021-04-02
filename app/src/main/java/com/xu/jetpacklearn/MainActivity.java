@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.xu.jetpacklearn.databinding.ActivityMainBinding;
@@ -58,4 +59,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }
