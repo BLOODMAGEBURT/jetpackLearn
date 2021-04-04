@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.xu.jetpacklearn.learn.HandlerLearnActivity;
 import com.xu.jetpacklearn.views.factor.FactorItemView;
 import com.xu.jetpacklearn.views.factor.FactorItemViewModel;
 import com.xu.jetpacklearn.views.factor.FactorView;
@@ -30,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                startActivity(new Intent(SplashActivity.this, PaymentApplyActivity.class));
+                startActivity(new Intent(SplashActivity.this, HandlerLearnActivity.class));
             }
         });
 

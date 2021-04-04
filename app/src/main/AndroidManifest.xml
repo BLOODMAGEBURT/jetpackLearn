@@ -20,10 +20,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".learn.HandlerLearnActivity"></activity>
         <activity
             android:name=".PaymentApplyActivity"
             android:label="@string/title_activity_payment_apply"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ApproveActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
