@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".learn.HandlerLearnActivity"></activity>
+        <activity android:name=".learn.TouchEventActivity"></activity>
+        <activity android:name=".learn.HandlerLearnActivity" />
         <activity
             android:name=".PaymentApplyActivity"
             android:label="@string/title_activity_payment_apply"

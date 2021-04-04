@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xu.jetpacklearn.learn.TouchEventLearn xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".learn.TouchEventActivity">
+
+    <Button
+        android:id="@+id/btn_hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hit me" />
+
+
+    <Button
+        android:id="@+id/btn_too"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="hit me too" />
+
+    <com.xu.jetpacklearn.learn.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:text="Hello World" />
+
+
+</com.xu.jetpacklearn.learn.TouchEventLearn>
