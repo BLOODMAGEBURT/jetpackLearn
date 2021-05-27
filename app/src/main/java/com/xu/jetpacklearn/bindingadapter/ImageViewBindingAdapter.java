@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
@@ -33,5 +34,10 @@ public class ImageViewBindingAdapter {
     @BindingAdapter("android:visibility")
     public static void setVisibility(View view, boolean visible) {
         view.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
+    @BindingAdapter("mode")
+    public static void setMode(TextView tv, String mode) {
+        tv.setTextColor(tv.getContext().getResources().getColor(R.color.colorAccent));
     }
 }
