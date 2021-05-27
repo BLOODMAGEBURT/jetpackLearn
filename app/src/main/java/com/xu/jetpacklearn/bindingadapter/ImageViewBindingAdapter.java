@@ -7,7 +7,6 @@ import android.widget.ImageView;
 
 import androidx.databinding.BindingAdapter;
 
-import com.squareup.picasso.Picasso;
 import com.xu.jetpacklearn.R;
 
 /**
@@ -19,15 +18,15 @@ public class ImageViewBindingAdapter {
     @BindingAdapter(value = {"imageUrl", "defaultImageResource"}, requireAll = false)
     public static void setImage(ImageView imageView, String imageUrl, Drawable defaultImageResource) {
         if (!TextUtils.isEmpty(imageUrl)) {
-            Picasso.get()
-                    .load(imageUrl)
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
-                    .into(imageView);
+//            Picasso.get()
+//                    .load(imageUrl)
+//                    .placeholder(R.drawable.ic_launcher_background)
+//                    .error(R.drawable.ic_launcher_background)
+//                    .into(imageView);
         } else {
-            Picasso.get()
-                    .load(R.drawable.ic_launcher_background)
-                    .into(imageView);
+//            Picasso.get()
+//                    .load(R.drawable.ic_launcher_background)
+//                    .into(imageView);
         }
     }
 

@@ -20,7 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".learn.TouchEventActivity"></activity>
+        <activity
+            android:name=".ScrollActivity"
+            android:exported="true" />
+        <activity android:name=".learn.TouchEventActivity" />
         <activity android:name=".learn.HandlerLearnActivity" />
         <activity
             android:name=".PaymentApplyActivity"
