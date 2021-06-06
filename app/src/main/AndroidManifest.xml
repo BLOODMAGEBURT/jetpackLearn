@@ -20,7 +20,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".learn.ConstraintActivity"></activity>
+        <activity
+            android:name=".learn.CordinatorActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".learn.ConstraintActivity" />
         <activity android:name=".learn.TouchEventActivity" />
         <activity android:name=".learn.HandlerLearnActivity" />
         <activity
