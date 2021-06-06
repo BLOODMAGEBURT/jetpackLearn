@@ -30,6 +30,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".learn.ConstraintActivity" />
+
+        <activity android:name=".ScrollActivity"
+            android:exported="true" />
+
         <activity android:name=".learn.TouchEventActivity" />
         <activity android:name=".learn.HandlerLearnActivity" />
         <activity
