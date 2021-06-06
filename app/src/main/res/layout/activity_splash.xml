@@ -13,8 +13,7 @@
         android:layout_gravity="center"
         android:text="goto"
         android:textSize="30dp"
-        android:textStyle="bold"
-        app:mode="@{normal}" />
+        android:textStyle="bold" />
 
     <com.xu.jetpacklearn.views.factor.FactorView
         android:id="@+id/fv"
